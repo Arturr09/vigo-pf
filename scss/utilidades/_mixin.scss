@@ -1,0 +1,191 @@
+@import "./variables";
+@import "./extend";
+
+//ESTILOS DEL HEADER
+@mixin header {
+    header {
+        background-color: $color-background;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        nav {
+            div {
+                div {
+                    ul {
+                        li {
+                            .color-menu {
+                                @extend %color-tipografia;
+                            }
+
+                            .color-menu:hover {
+                                background-color: rgba(0, 0, 0, 0.2);
+                                @extend %color-tipografia;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    
+        div {
+            margin-right: 10px;
+            i {
+                margin: 5px;
+            }
+        }
+
+    }
+}
+
+//ESTILOS DEL FOOTER 
+@mixin footer {
+    .df-footer {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 1.5em;
+        background-color: $color-background;
+
+        .df-nav-footer {
+            display: flex;
+            flex-direction: column;
+
+            h4 {
+                @extend %color-tipografia;
+            }
+
+            nav {
+                ul {
+                    list-style: none;
+
+                    li {
+                        a {
+                            text-decoration: none;
+                            @extend %color-tipografia;
+                            margin-left: 1rem;
+                        }
+
+                        a:hover {
+                            border-bottom: solid white 1px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .df-redes {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+            h4 {
+                @extend %color-tipografia;
+            }
+
+            i {
+                margin: 0.8em;
+            }
+        }
+
+        .dg-pagos {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: center;
+
+            h4 {
+                @extend %color-tipografia;
+            }
+
+            img {
+                margin: 5px;
+                border-radius: 5px;
+                width: 35px;
+                height: 25px;
+            }
+        }
+
+        .dg-contacto {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto auto auto;
+            column-gap: 0.5rem;
+            align-items: center;
+
+            h4 {
+                grid-column: span 2;
+                text-align: center;
+                @extend %color-tipografia;
+            }
+
+            i {
+                margin: 15px 5px;
+            }
+
+            p {
+                @extend %color-tipografia;
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .df-footer {
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: baseline;
+        }
+    }
+}
+
+//ESTILOS DEL LOGO
+@mixin logo {
+    .logo {
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+
+        a {
+            .logo-img {
+                width: 8em;
+                background-color: $color-principal;
+                padding: 0.5rem;
+                @extend %box;
+            }
+        }
+    }
+}
+
+//ESTILOS DEL FONDO
+@mixin fondo {
+    body {
+        background-image: linear-gradient(0deg,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1)), url(../img/fondo.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        @extend %box;
+    }
+
+}
+
+@mixin whatsapp {
+    .whatsapp-icon {
+        position: fixed;
+        width: 45px;
+        height: 45px;
+        line-height: 55px;
+        bottom: 30px;
+        right: 30px;
+    }
+
+
+    .whatsapp-icon:hover {
+        transform: scale(1.3);
+    }
+
+}

@@ -1,0 +1,50 @@
+@import"../utilidades/extend";
+@import"../utilidades/mixin";
+@import"../utilidades/variables";
+
+main {
+    .como-comprar {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        ol {
+            li {
+                margin: 5px;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 320px) {
+    main {
+        .como-comprar {
+            ol {
+                width: 90vw;
+            }
+        }
+
+    }
+}
+
+
+@media (min-width: 600px) {
+    main {
+        .como-comprar {
+            ol {
+                width: 60vw;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 1200px){
+    main {
+        .como-comprar {
+            height: 55vh;
+        }
+    }
+}

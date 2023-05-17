@@ -1,0 +1,11 @@
+%color-tipografia{
+    color: white; 
+}
+%box{
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+%color-principal{
+    color: $color-principal;
+}

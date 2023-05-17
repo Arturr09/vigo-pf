@@ -1,0 +1,49 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bs-body-font-family: 'Amaranth', sans-serif;
+}
+
+
+body {
+    --bs-body-font-family: 'Amaranth', sans-serif;
+    --bs-body-line-height: auto;
+}
+
+p,
+h3 {
+    margin: 0;
+}
+
+
+//IMPOR DE UTILIDADES
+@import "./utilidades/mixin";
+
+/* ESTILOS GENERALES */
+/* ESTILOS DEL HEADER */
+@include header;
+/* ESTILOS DEL FOOTER */
+@include footer;
+/* ESTILOS DEL LOGO */
+@include logo;
+/* IMAGEN DE FONDO */
+@include fondo;
+/* ICONO DE WHATSAPP */
+@include whatsapp;
+
+//IMPORT
+// INDEX 
+@import "./html/index";
+/* PRODUCTOS */
+@import "./html/productos";
+/* QUIENES SOMOS */
+@import "./html/quienes-somos";
+/* CONTACTO */
+@import "./html/contacto";
+/* COMO COMPRAR */
+@import"./html/como-comprar";

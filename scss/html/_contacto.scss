@@ -1,0 +1,111 @@
+@import"../utilidades/extend";
+@import"../utilidades/mixin";
+@import"../utilidades/variables";
+
+.contacto {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content: center;
+    row-gap: 10px;
+
+    .datos-de-contacto {
+        display: flex;
+        flex-direction: column;
+
+        div {
+            display: flex;
+            align-items: baseline;
+            margin: 10px 0px;
+
+            p {
+                margin: 0px 10px;
+            }
+        }
+
+
+    }
+
+    .ubicacion iframe {
+        border-radius: 5px;
+    }
+
+    form {
+        .form-box {
+            div {
+                margin: 10px 0px;
+            }
+
+            .input-box {
+                display: grid;
+                grid-template-columns: 60px auto;
+                row-gap: 80px;
+
+                input {
+                    border-radius: 5px;
+                }
+
+                textarea {
+                    border-radius: 5px;
+                    height: 150px;
+                }
+            }
+
+            .input-box-button {
+                display: flex;
+                justify-content: flex-end;
+
+                input {
+                    padding: 5px;
+                    margin: 5px;
+                    background-color: $color-principal;
+                    border-radius: 10px;
+                }
+                input:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .contacto {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+
+        form {
+            grid-column: span 2;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .contacto {
+        grid-template-areas:
+            "contacto mensaje"
+            "ubicacion mensaje";
+        padding: 110px 0;
+
+        .datos-de-contacto {
+            grid-area: contacto;
+        }
+
+        .ubicacion {
+            grid-area: ubicacion;
+        }
+
+        form {
+            grid-area: mensaje;
+            width: 600px;
+            margin: 0 50px;
+
+            .form-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+            }
+        }
+    }
+}

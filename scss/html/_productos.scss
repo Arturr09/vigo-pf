@@ -1,0 +1,184 @@
+@import"../utilidades/extend";
+@import"../utilidades/mixin";
+@import"../utilidades/variables";
+
+main {
+    .productos-container {
+        .productos-listado{
+            ul{
+                li:hover{
+                    border-bottom: solid white 1px;
+                }
+            }
+        }
+        .df-dropdown {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .dropdown-toggle {
+                padding: 8px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .productos {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        justify-content: center;
+
+        .carta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            @extend %box;
+            padding: 5px;
+            @extend %color-tipografia;
+            background-color: $color-background;
+            margin: 5px;
+            width: 152px;
+
+            div {
+                img {
+                    border-radius: 10px;
+                }
+            }
+
+            div {
+                button {
+                    padding: 8px;
+                    width: 6em;
+                    margin: 5px;
+                    font-weight: bold;
+                    font-size: large;
+                    background-color: $color-principal;
+                    border-radius: 10px;
+                }
+
+                button:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .carta:hover {
+            background-color: $color-background;
+            transform: scale(1.01);
+        }
+    }
+
+    .todos-productos {
+        display: flex;
+        justify-content: flex-end;
+        margin: 10px;
+        padding: 2px;
+
+        button {
+            padding: 8px;
+            margin: 5px;
+            font-weight: bold;
+            font-size: large;
+            background-color: $color-principal;
+            border-radius: 10px;
+
+        }
+
+        button:hover {
+            background-color: $color-principal;
+            transform: scale(1.1);
+        }
+    }
+}
+
+@media (min-width: 320px) {
+    main {
+        .productos-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .productos-listado {
+                display: none;
+            }
+
+            .productos {
+
+                .carta:nth-child(7),
+                .carta:nth-child(8),
+                .carta:nth-child(9),
+                .carta:nth-child(10),
+                .carta:nth-child(11),
+                .carta:nth-child(12),
+                .carta:nth-child(13),
+                .carta:nth-child(14),
+                .carta:nth-child(15) {
+                    display: none;
+                }
+            }
+
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    main {
+        .productos-container {
+            .productos {
+                grid-template-columns: auto auto auto;
+
+                .carta {
+                    margin: 15px;
+                    width: 170px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        .productos-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: center;
+            align-items: baseline;
+
+            .productos-listado {
+                display: block;
+                margin: 100px;
+
+                ul {
+                    list-style: none;
+                    width: 200px;
+                }
+            }
+
+            .productos {
+                grid-template-columns: repeat(4, auto);
+                justify-content: flex-end;
+            }
+
+            .df-dropdown {
+                display: none;
+            }
+
+            .productos {
+
+                .carta:nth-child(7),
+                .carta:nth-child(8),
+                .carta:nth-child(9),
+                .carta:nth-child(10),
+                .carta:nth-child(11),
+                .carta:nth-child(12),
+                .carta:nth-child(13),
+                .carta:nth-child(14),
+                .carta:nth-child(15) {
+                    display: block;
+                }
+            }
+        }
+    }
+}
