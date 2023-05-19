@@ -546,3 +546,9 @@ main .como-comprar {
 @media (min-width: 600px) {
   main .como-comprar ol {
     width: 60vw; } }
+
+@media (min-width: 600px) {
+  main {
+    height: 75vh; }
+    main .como-comprar {
+      margin: 50px; } }
