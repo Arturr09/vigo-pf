@@ -547,8 +547,7 @@ main .como-comprar {
   main .como-comprar ol {
     width: 60vw; } }
 
-@media (min-width: 600px) {
-  main {
-    height: 75vh; }
-    main .como-comprar {
-      margin: 50px; } }
+@media (min-width: 1200px) {
+  main .como-comprar {
+    margin: 30px;
+    height: 50vh; } }
